@@ -1,0 +1,28 @@
+﻿<Grid 
+    Margin="0,0,0,5"
+    x:Class="Inteldev.Core.Presentacion.Controles.ItemFormularioFecha"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" 
+    d:DesignHeight="26" Height="25"
+    HorizontalAlignment="Left">
+    
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="150"/>
+        <ColumnDefinition Width="130"/>
+    </Grid.ColumnDefinitions>
+    
+    <TextBlock 
+        VerticalAlignment="Center"
+        Name="txtEtiqueta" 
+        Text="{Binding Etiqueta, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}"  
+        Grid.Column="0"
+    />
+    <DatePicker 
+        Name="txtCampo" 
+        SelectedDate="{Binding Fecha, RelativeSource={RelativeSource AncestorType={x:Type Grid}},Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true, NotifyOnValidationError=true}"  
+        Grid.Column="1"  
+    />
+</Grid>

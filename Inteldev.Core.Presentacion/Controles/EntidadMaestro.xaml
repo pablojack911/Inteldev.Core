@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Inteldev.Core.Presentacion.Controles.EntidadMaestro"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controles="clr-namespace:Inteldev.Core.Presentacion.Controles"
+             Loaded="UserControl_Loaded">
+             <!--Template="{DynamicResource ResourceKey=FondoAzulCopadoDelCore}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Dictionary1.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>-->
+    <StackPanel Margin="10">
+        <controles:ItemFormulario 
+            Width="250" 
+            x:Name="txtItemCodigo" 
+            Etiqueta="Código" 
+            Valor="{Binding Path=Modelo.Codigo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+            Habilitado="{Binding CodigoHabilitado}"
+            HorizontalAlignment="Left"/>
+        <controles:ItemFormulario 
+                    FocusManager.IsFocusScope="True"
+                    x:Name="txtNombre"
+                    Etiqueta="Nombre" 
+                    Valor="{Binding Path=Modelo.Nombre, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnDataErrors=true, NotifyOnValidationError=true}"/>
+    </StackPanel>
+</UserControl>
+
+<!--IsEnabled="False"-->

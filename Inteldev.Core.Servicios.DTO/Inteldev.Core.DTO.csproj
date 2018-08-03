@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{21A0DEE8-AEA7-45BC-867D-606396D5AF98}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Inteldev.Core.DTO</RootNamespace>
+    <AssemblyName>Inteldev.Core.DTO</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Debug\Inteldev.Core.DTO.XML</DocumentationFile>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentValidation, Version=6.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.6.2.1.0\lib\portable-net40+sl50+wp80+win8+wpa81\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Carriers\CreadorCarrier.cs" />
+    <Compile Include="Carriers\ErrorCarrier.cs" />
+    <Compile Include="Carriers\EvaluarConcurrencia.cs" />
+    <Compile Include="Carriers\GrabadorCarrier.cs" />
+    <Compile Include="Carriers\ValoresDeConcurrencia.cs" />
+    <Compile Include="Contabilidad\Imputaciones.cs" />
+    <Compile Include="Documento.cs" />
+    <Compile Include="Documentos.cs" />
+    <Compile Include="DTOMaestro.cs" />
+    <Compile Include="EstadoRespuesta.cs" />
+    <Compile Include="Faults\GenericFault.cs" />
+    <Compile Include="Fiscal\CondicionAnteIva.cs" />
+    <Compile Include="IncluirEnBuscadorAttribute.cs" />
+    <Compile Include="Auditoria\Observacion.cs" />
+    <Compile Include="DTOBase.cs" />
+    <Compile Include="EstadoEntidad.cs" />
+    <Compile Include="Fiscal\Cuit.cs" />
+    <Compile Include="Fiscal\Iibb.cs" />
+    <Compile Include="IncluirEnListadoAttribute.cs" />
+    <Compile Include="ListaParametrosDeBusqueda.cs" />
+    <Compile Include="Locacion\Calle.cs" />
+    <Compile Include="Locacion\Contacto.cs" />
+    <Compile Include="Locacion\Coordenada.cs" />
+    <Compile Include="Locacion\Domicilio.cs" />
+    <Compile Include="Locacion\Localidad.cs" />
+    <Compile Include="Locacion\Provincia.cs" />
+    <Compile Include="Locacion\Telefono.cs" />
+    <Compile Include="Locacion\TipoTelefono.cs" />
+    <Compile Include="Menu\OpcionMenu.cs" />
+    <Compile Include="Menu\OpcionMenuEmpresa.cs" />
+    <Compile Include="Numerador.cs" />
+    <Compile Include="Organizacion\DivisionComercial.cs" />
+    <Compile Include="Organizacion\Empresa.cs" />
+    <Compile Include="Organizacion\EmpresaCodigo.cs" />
+    <Compile Include="Organizacion\Sucursal.cs" />
+    <Compile Include="Organizacion\UnidadeDeNegocio.cs" />
+    <Compile Include="Parametros.cs" />
+    <Compile Include="ParametrosMiniBusca.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RangoFecha.cs" />
+    <Compile Include="Respuesta.cs" />
+    <Compile Include="ResultadoBusqueda.cs" />
+    <Compile Include="Stock\Deposito.cs" />
+    <Compile Include="Tesoreria\Efectivo.cs" />
+    <Compile Include="Tesoreria\Valor.cs" />
+    <Compile Include="Tesoreria\Valores.cs" />
+    <Compile Include="Usuarios\NivelPermiso.cs" />
+    <Compile Include="Usuarios\PerfilUsuario.cs" />
+    <Compile Include="Usuarios\Permiso.cs" />
+    <Compile Include="Usuarios\Usuario.cs" />
+    <Compile Include="Validaciones\IValidador.cs" />
+    <Compile Include="Validaciones\ValidadorAtributo.cs" />
+    <Compile Include="Validaciones\ValidadorBase.cs" />
+    <Compile Include="Validaciones\ValidadorCalle.cs" />
+    <Compile Include="Validaciones\ValidadorCUIT.cs" />
+    <Compile Include="Validaciones\ValidadorDivisionComercial.cs" />
+    <Compile Include="Validaciones\ValidadorEmpresa.cs" />
+    <Compile Include="Validaciones\ValidadorEstatico.cs" />
+    <Compile Include="Validaciones\ValidadorFecha.cs" />
+    <Compile Include="Validaciones\ValidadorLocalidad.cs" />
+    <Compile Include="Validaciones\ValidadorTelefono.cs" />
+    <Compile Include="Validaciones\ValidadorUsuario.cs" />
+    <Compile Include="ValidatorAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Inteldev.Core\Inteldev.Core.csproj">
+      <Project>{84dbfb5d-b08d-410a-ae09-9d2f1b0b77eb}</Project>
+      <Name>Inteldev.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

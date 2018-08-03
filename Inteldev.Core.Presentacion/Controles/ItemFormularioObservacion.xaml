@@ -1,0 +1,82 @@
+﻿<Grid 
+    x:Class="Inteldev.Core.Presentacion.Controles.ItemFormularioObservacion"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d"
+    Margin="0,0,0,5"
+    FocusManager.IsFocusScope="True"
+    FocusManager.FocusedElement="{Binding ElementName=btnAgregar}">
+
+    <Grid.RowDefinitions>
+        <RowDefinition Height="185" />
+        <RowDefinition Height="25" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="150"/>
+        <ColumnDefinition Width="380*" MinWidth="380" MaxWidth="525"/>
+    </Grid.ColumnDefinitions>
+
+    <DataGrid 
+        AutoGenerateColumns="False" 
+        ItemsSource="{Binding Path=Presentador.Detalle, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,RelativeSource={RelativeSource AncestorType={x:Type Grid}, AncestorLevel=1}}" 
+        SelectedItem="{Binding Path=Presentador.ItemSeleccionado, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" CanUserAddRows="False" CanUserDeleteRows="True" 
+        RowDetailsVisibilityMode="VisibleWhenSelected"
+        Grid.Column="1" CanUserResizeRows="False" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
+        ScrollViewer.CanContentScroll="True"
+        ScrollViewer.VerticalScrollBarVisibility="Visible">
+        <DataGrid.Columns>
+            <!--<DataGridTextColumn Header="Fecha" Binding="{Binding Path=FechaHora}" CanUserReorder="False"></DataGridTextColumn>-->
+            <!--<DataGridTextColumn Header="Usuario" Binding="{Binding Path=Usuario.Nombre}" CanUserReorder="False"></DataGridTextColumn>-->
+            <!--<DataGridTextColumn Header="Observación" Binding="{Binding Path=Nombre}" CanUserReorder="False" ></DataGridTextColumn>-->
+            <DataGridTemplateColumn Header="Observación" CanUserReorder="False" CanUserResize="False" MaxWidth="500">
+
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <TextBox IsReadOnly="True"  Text="{Binding Path=Nombre}" TextWrapping="Wrap" ></TextBox>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+        </DataGrid.Columns>
+        <DataGrid.RowDetailsTemplate>
+            <DataTemplate>
+                <StackPanel Background="White">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Label>Usuario:</Label>
+                        <TextBlock Text="{Binding Path=Usuario.Nombre}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Label>Fecha:</Label>
+                        <TextBlock Text="{Binding FechaHora}"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </DataTemplate>
+        </DataGrid.RowDetailsTemplate>
+    </DataGrid>
+    <StackPanel 
+        Orientation="Horizontal" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right"
+        FocusManager.IsFocusScope="True">
+        <Button 
+            FocusManager.IsFocusScope="True"
+            Name="btnAgregar"  Width="25" Height="25" 
+            Command="{Binding Path=Presentador.CmdAgregar, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" >
+            <Image Source="/Inteldev.Core.Presentacion;component/Iconos/add.png"></Image>
+        </Button>
+        <Button 
+            Name="btnEditar" Width="25" Height="25" 
+            Command="{Binding Path=Presentador.CmdEditar, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" >
+            <Image Source="/Inteldev.Core.Presentacion;component/Iconos/edit.png"></Image>
+        </Button>
+        <Button 
+            Name="btnBorrar" Width="25" Height="25" 
+            Command="{Binding Path=Presentador.CmdBorrar, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" >
+            <Image Source="/Inteldev.Core.Presentacion;component/Iconos/delete.png"></Image>
+        </Button>
+    </StackPanel>
+    <TextBlock 
+        Text="{Binding Etiqueta, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" 
+        Name="etiqueta" 
+    />
+</Grid>
+

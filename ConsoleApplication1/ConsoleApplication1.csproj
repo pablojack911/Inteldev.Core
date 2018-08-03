@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38DE19DA-FE6C-4EF7-B792-C9054C46F827}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConsoleApplication1</RootNamespace>
+    <AssemblyName>ConsoleApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Inteldev.Core.Contratos\Inteldev.Core.Contratos.csproj">
+      <Project>{a7c973b6-51e7-43eb-87a6-5091b44f5527}</Project>
+      <Name>Inteldev.Core.Contratos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inteldev.Core.Datos\Inteldev.Core.Datos.csproj">
+      <Project>{f52cbe45-e991-4776-991b-69df4372a333}</Project>
+      <Name>Inteldev.Core.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inteldev.Core.Modelo\Inteldev.Core.Modelo.csproj">
+      <Project>{9baf06cc-dba4-4087-94e4-42be28a777aa}</Project>
+      <Name>Inteldev.Core.Modelo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inteldev.Core.Negocios\Inteldev.Core.Negocios.csproj">
+      <Project>{aedc5f28-e1dd-4312-a6d3-335d5b66fe0a}</Project>
+      <Name>Inteldev.Core.Negocios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inteldev.Core.Presentacion\Inteldev.Core.Presentacion.csproj">
+      <Project>{8416e2f8-e897-4751-b1c3-88014ba0707b}</Project>
+      <Name>Inteldev.Core.Presentacion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inteldev.Core.Servicios.DTO\Inteldev.Core.Servicios.DTO.csproj">
+      <Project>{21a0dee8-aea7-45bc-867d-606396d5af98}</Project>
+      <Name>Inteldev.Core.Servicios.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inteldev.Core.Servicios\Inteldev.Core.Servicios.csproj">
+      <Project>{3c968572-2b57-4b10-8e42-5cf740a94d46}</Project>
+      <Name>Inteldev.Core.Servicios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inteldev.Core\Inteldev.Core.csproj">
+      <Project>{84dbfb5d-b08d-410a-ae09-9d2f1b0b77eb}</Project>
+      <Name>Inteldev.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

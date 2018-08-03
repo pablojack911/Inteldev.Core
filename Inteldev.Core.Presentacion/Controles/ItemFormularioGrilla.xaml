@@ -1,0 +1,49 @@
+﻿<Grid 
+    x:Class="Inteldev.Core.Presentacion.Controles.ItemFormularioGrilla"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" 
+    Margin="0,0,0,5">
+    <!--Width="500" Comentado por Pocho. Se veía mal en ItemContacto.ItemFormularioTelefono-->
+
+    <Grid.RowDefinitions>
+        <RowDefinition Height="25" />
+        <RowDefinition Height="150*" />
+        <RowDefinition Height="25" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="150" />
+        <ColumnDefinition MinWidth="380"
+                          Width="380*" />
+    </Grid.ColumnDefinitions>
+
+    <TextBlock 
+        VerticalAlignment="Top"
+        Margin="0,5,0,0"
+        Text="{Binding Etiqueta, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" Name="etiqueta" />
+    <DataGrid 
+        Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"
+        Name="dataGrid1" 
+        MinHeight="100"
+        AutoGenerateColumns="{Binding AutoGenerarColumnas, RelativeSource={RelativeSource AncestorType={x:Type Grid}}, UpdateSourceTrigger=PropertyChanged}"
+        ItemsSource="{Binding Path=Presentador.Detalle, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type Grid}}, UpdateSourceTrigger=PropertyChanged}" 
+        SelectedItem="{Binding Path=Presentador.ItemSeleccionado, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" 
+        CanUserAddRows="False" CanUserDeleteRows="True" MinColumnWidth="22"
+        ScrollViewer.CanContentScroll="True"
+        ScrollViewer.VerticalScrollBarVisibility="Visible"
+    />
+    <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+        <Button Command="{Binding Path=Presentador.CmdAgregar, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}"  Name="btnAgregar" >
+            <Image Source="/Inteldev.Core.Presentacion;component/Iconos/add.png" ></Image>
+        </Button>
+        <Button Command="{Binding Path=Presentador.CmdEditar, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" Name="btnEditar" Visibility="{Binding BotonEditarVisible,RelativeSource={RelativeSource AncestorType={x:Type Grid}}}">
+            <Image Source="/Inteldev.Core.Presentacion;component/Iconos/edit.png"></Image>
+        </Button>
+        <Button Command="{Binding Path=Presentador.CmdBorrar, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" Name="btnBorrar" Visibility="{Binding BotonEliminarVisible,RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" >
+            <Image Source="/Inteldev.Core.Presentacion;component/Iconos/delete.png"></Image>
+        </Button>
+    </StackPanel>
+
+</Grid>

@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Inteldev.Core.Presentacion.Controles.Entidad"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:controles="clr-namespace:Inteldev.Core.Presentacion.Controles"
+             mc:Ignorable="d"> <!--Height="64" Width="393" VerticalAlignment="Top" HorizontalAlignment="Left" Comentado por Pocho-->
+    <Grid>
+        <StackPanel>
+            <controles:ItemFormulario 
+                Etiqueta="ID" 
+                Valor="{Binding Path=Modelo.Id, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                IsEnabled="False" >
+                <!--Margin="0,0,10,5"-->
+                <!--<controles:ItemFormulario.ColumnDefinitions>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="175*"/>
+                    <ColumnDefinition Width="108*"/>
+                </controles:ItemFormulario.ColumnDefinitions> Comentado por Pocho-->
+            </controles:ItemFormulario>
+            <controles:ItemFormulario 
+                Etiqueta="Nombre" 
+                Valor="{Binding Path=Modelo.Nombre, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+                <!--<controles:ItemFormulario.ColumnDefinitions>
+                    <ColumnDefinition Width="149*"/>
+                    <ColumnDefinition Width="244*"/>
+                </controles:ItemFormulario.ColumnDefinitions> Comentado por Pocho-->
+            </controles:ItemFormulario>
+        </StackPanel>
+    </Grid>
+</UserControl>

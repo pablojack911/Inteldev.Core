@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8416E2F8-E897-4751-B1C3-88014BA0707B}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Inteldev.Core.Presentacion</RootNamespace>
+    <AssemblyName>Inteldev.Core.Presentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Inteldev.Core.Presentacion.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=2.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.6\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=2.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.6\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=2.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.6\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=2.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.6\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=2.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.6\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=2.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.6\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CamelCaseConverter.cs" />
+    <Compile Include="ClienteServicios\FabricaClienteServicio.cs" />
+    <Compile Include="Comandos\ComandoGrabar.cs" />
+    <Compile Include="Comandos\CommandoBorrar.cs" />
+    <Compile Include="Comandos\RelayCommand.cs" />
+    <Compile Include="Controladores\ControladorArbol.cs" />
+    <Compile Include="Controladores\ControladorLogin.cs" />
+    <Compile Include="Controles\BaseVentanaListado.xaml.cs">
+      <DependentUpon>BaseVentanaListado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\BuscadorInicial.xaml.cs">
+      <DependentUpon>BuscadorInicial.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controles\ConvertidorDomicilio.cs" />
+    <Compile Include="Controles\DataGridColumnsHelper.cs" />
+    <Compile Include="Controles\Entidad.xaml.cs">
+      <DependentUpon>Entidad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\EntidadMaestro.xaml.cs">
+      <DependentUpon>EntidadMaestro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ItemContacto.xaml.cs">
+      <DependentUpon>ItemContacto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ItemFormularioCheck.xaml.cs">
+      <DependentUpon>ItemFormularioCheck.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ItemFormularioCheckAjustable.xaml.cs">
+      <DependentUpon>ItemFormularioCheckAjustable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ItemFormularioComboBox.xaml.cs">
+      <DependentUpon>ItemFormularioComboBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ItemFormularioComboBoxEnums.xaml.cs">
+      <DependentUpon>ItemFormularioComboBoxEnums.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ItemFormularioContactos.xaml.cs">
+      <DependentUpon>ItemFormularioContactos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ItemFormularioCuit.xaml.cs">
+      <DependentUpon>ItemFormularioCuit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ItemFormularioDiasDeSemana.xaml.cs">
+      <DependentUpon>ItemFormularioDiasDeSemana.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ItemFormularioDomicilio.xaml.cs">
+      <DependentUpon>ItemFormularioDomicilio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ItemFormularioID.xaml.cs">
+      <DependentUpon>ItemFormularioID.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ItemFormularioListaValores.xaml.cs">
+      <DependentUpon>ItemFormularioListaValores.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ItemFormularioMiniBuscaLista.xaml.cs">
+      <DependentUpon>ItemFormularioMiniBuscaLista.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ItemFormularioNumeroDecimal.xaml.cs">
+      <DependentUpon>ItemFormularioNumeroDecimal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ItemFormularioNumeroEntero.xaml.cs">
+      <DependentUpon>ItemFormularioNumeroEntero.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ItemFormularioObservacion.xaml.cs">
+      <DependentUpon>ItemFormularioObservacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ItemFormularioTelefono.cs" />
+    <Compile Include="Controles\ItemFormularioTextMultilinea.xaml.cs">
+      <DependentUpon>ItemFormularioTextMultilinea.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ItemObservacion.xaml.cs">
+      <DependentUpon>ItemObservacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ItemPassword.xaml.cs">
+      <DependentUpon>ItemPassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ItemTelefono.xaml.cs">
+      <DependentUpon>ItemTelefono.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Listado.xaml.cs">
+      <DependentUpon>Listado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\PasswordHelper.cs" />
+    <Compile Include="Controles\TreeViewPerfilUsuario.xaml.cs">
+      <DependentUpon>TreeViewPerfilUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PermisoManager.cs" />
+    <Compile Include="Presentadores\ArgumentoGenerico.cs" />
+    <Compile Include="Presentadores\FabricaPresentadores.cs" />
+    <Compile Include="Presentadores\Interfaces\ICambioEntidad.cs" />
+    <Compile Include="Presentadores\Interfaces\IPresentadorBuscador.cs" />
+    <Compile Include="Presentadores\Interfaces\IPresentadorContacto.cs" />
+    <Compile Include="Presentadores\Interfaces\IPresentadorDomicilio.cs" />
+    <Compile Include="Presentadores\Interfaces\IPresentadorGrilla.cs" />
+    <Compile Include="Presentadores\Interfaces\IPresentadorMaestroDetalle.cs" />
+    <Compile Include="Presentadores\Interfaces\IPresentadorMiniBusca.cs" />
+    <Compile Include="Presentadores\Interfaces\IPresentadorMinibuscaList.cs" />
+    <Compile Include="Presentadores\Interfaces\IPresentadorABM.cs" />
+    <Compile Include="Presentadores\Interfaces\IPresentadorBase.cs" />
+    <Compile Include="Presentadores\Interfaces\IPresentadorBaseDialogo.cs" />
+    <Compile Include="Presentadores\IPresentadorABM.cs" />
+    <Compile Include="Presentadores\IPresentadorBuscador.cs" />
+    <Compile Include="Presentadores\IPresentadorListaValores.cs" />
+    <Compile Include="Presentadores\IPresentadorMiniBuscaLocalidad.cs" />
+    <Compile Include="Presentadores\PresentadorBaseDialogo.cs" />
+    <Compile Include="Presentadores\PresentadorContacto.cs" />
+    <Compile Include="Presentadores\PresentadorDomicilio.cs" />
+    <Compile Include="Presentadores\PresentadorGrilla.cs" />
+    <Compile Include="Presentadores\PresentadorListAbm.cs" />
+    <Compile Include="Controladores\ControladorMenu.cs" />
+    <Compile Include="Controladores\ControladorSeleccionEmpresa.cs" />
+    <Compile Include="Controladores\IPresentador.cs" />
+    <Compile Include="Controladores\Sistema.cs" />
+    <Compile Include="Controles\BaseABM.xaml.cs">
+      <DependentUpon>BaseABM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\BaseVentanaDialogo.xaml.cs">
+      <DependentUpon>BaseVentanaDialogo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\GuardarCerrarTab.xaml.cs">
+      <DependentUpon>GuardarCerrarTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\IBaseABM.cs" />
+    <Compile Include="Controles\ItemFormulario.xaml.cs">
+      <DependentUpon>ItemFormulario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ItemFormularioFecha.xaml.cs">
+      <DependentUpon>ItemFormularioFecha.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ItemFormularioGrilla.xaml.cs">
+      <DependentUpon>ItemFormularioGrilla.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ItemFormularioMiniBusca.xaml.cs">
+      <DependentUpon>ItemFormularioMiniBusca.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos.cs" />
+    <Compile Include="FabricaIoC.cs" />
+    <Compile Include="Mensajes.cs" />
+    <Compile Include="Presentadores\PresentadorABM.cs" />
+    <Compile Include="Presentadores\PresentadorBase.cs" />
+    <Compile Include="Presentadores\PresentadorBuscador.cs" />
+    <Compile Include="Presentadores\PresentadorListaValores.cs" />
+    <Compile Include="Presentadores\PresentadorMaestroDetalle.cs" />
+    <Compile Include="Presentadores\PresentadorMiniBusca.cs" />
+    <Compile Include="Presentadores\PresentadorMinibuscaList.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RegistroFabricaVistas.cs" />
+    <Compile Include="Reportes\CreateExcelFile.cs" />
+    <Compile Include="VistasModelos\ActualizaDTOAttribute.cs" />
+    <Compile Include="VistasModelos\IVistaModeloBaseDialogo.cs" />
+    <Compile Include="VistasModelos\VistaModeloBase.cs" />
+    <Compile Include="VistasModelos\VistaModeloBaseDialogo.cs" />
+    <Compile Include="VistasModelos\VistaModeloEmpresa.cs" />
+    <Compile Include="VistasModelos\VistaModeloLista.cs" />
+    <Compile Include="VistasModelos\VistaModeloPerfil.cs" />
+    <Compile Include="FabricaVistas.cs" />
+    <Compile Include="Vistas\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistaCambiaEmpresa.xaml.cs">
+      <DependentUpon>VistaCambiaEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistaEmpresa.xaml.cs">
+      <DependentUpon>VistaEmpresa.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="VistasModelo.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controles\BaseABM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controles\BaseVentanaDialogo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controles\BaseVentanaListado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\BuscadorInicial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\Entidad.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controles\EntidadMaestro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\GuardarCerrarTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controles\ItemContacto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\ItemFormulario.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controles\ItemFormularioCheck.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\ItemFormularioCheckAjustable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controles\ItemFormularioComboBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\ItemFormularioComboBoxEnums.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\ItemFormularioContactos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\ItemFormularioCuit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\ItemFormularioDiasDeSemana.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\ItemFormularioDomicilio.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controles\ItemFormularioFecha.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controles\ItemFormularioGrilla.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\ItemFormularioID.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\ItemFormularioListaValores.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\ItemFormularioMiniBusca.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controles\ItemFormularioMiniBuscaLista.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\ItemFormularioNumeroDecimal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\ItemFormularioNumeroEntero.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\ItemFormularioObservacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\ItemFormularioTextMultilinea.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\ItemObservacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\ItemPassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\ItemTelefono.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\Listado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\TreeViewPerfilUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dictionary1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vistas\VistaCambiaEmpresa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vistas\VistaEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Inteldev.Core.Contratos\Inteldev.Core.Contratos.csproj">
+      <Project>{a7c973b6-51e7-43eb-87a6-5091b44f5527}</Project>
+      <Name>Inteldev.Core.Contratos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inteldev.Core.Servicios.DTO\Inteldev.Core.DTO.csproj">
+      <Project>{21a0dee8-aea7-45bc-867d-606396d5af98}</Project>
+      <Name>Inteldev.Core.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inteldev.Core\Inteldev.Core.csproj">
+      <Project>{84dbfb5d-b08d-410a-ae09-9d2f1b0b77eb}</Project>
+      <Name>Inteldev.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Iconos\add - copia.png" />
+    <Resource Include="Iconos\add-32.png" />
+    <Resource Include="Iconos\add.png" />
+    <Resource Include="Iconos\ASD.jpg" />
+    <Resource Include="Iconos\checklist.png" />
+    <Resource Include="Iconos\delete - copia.png" />
+    <Resource Include="Iconos\delete.png" />
+    <Resource Include="Iconos\detailed.png" />
+    <Resource Include="Iconos\edit - copia.png" />
+    <Resource Include="Iconos\edit.png" />
+    <Resource Include="Iconos\exc.png" />
+    <Resource Include="Iconos\list.png" />
+    <Resource Include="Iconos\Login.png" />
+    <Resource Include="Iconos\lupa.png" />
+    <Resource Include="Iconos\maps.png" />
+    <Resource Include="Iconos\ok.png" />
+    <Resource Include="Iconos\photo - copia.png" />
+    <Resource Include="Iconos\photo.png" />
+    <Resource Include="Iconos\save-24 - copia.png" />
+    <Resource Include="Iconos\save-24.png" />
+    <Resource Include="Iconos\save-all.png" />
+    <Resource Include="Iconos\saveall-24.png" />
+    <Resource Include="Iconos\search.png" />
+    <Resource Include="Iconos\trash-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Iconos\excel.png" />
+    <Resource Include="Iconos\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Iconos\pdf.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

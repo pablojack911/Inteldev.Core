@@ -1,0 +1,24 @@
+﻿<Grid 
+    x:Class="Inteldev.Core.Presentacion.Controles.ItemFormularioTextMultilinea"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" 
+    d:DesignHeight="26" Height="85">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="150" />
+        <ColumnDefinition Width="380" />
+    </Grid.ColumnDefinitions>
+    <TextBlock 
+        Name="txtEtiqueta" 
+        Text="{Binding Etiqueta, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}"  
+        Grid.Column="0" VerticalAlignment="Top"
+    />
+    <TextBox 
+        Name="txtCampo" 
+        Text="{Binding Texto, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}"  
+        Grid.Column="1"  AutoWordSelection="True" Height="Auto" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible"
+    />
+</Grid>
+

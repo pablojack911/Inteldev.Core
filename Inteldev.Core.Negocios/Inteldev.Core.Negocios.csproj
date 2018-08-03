@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AEDC5F28-E1DD-4312-A6D3-335D5B66FE0A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Inteldev.Core.Negocios</RootNamespace>
+    <AssemblyName>Inteldev.Core.Negocios</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Debug\Inteldev.Core.Negocios.XML</DocumentationFile>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BorradorDTO.cs" />
+    <Compile Include="BorradorGenerico.cs" />
+    <Compile Include="BuscadorDTO.cs" />
+    <Compile Include="BuscadorDTOPermiso.cs" />
+    <Compile Include="BuscadorGenerico.cs" />
+    <Compile Include="Busquedas\BlockDeBusqueda.cs" />
+    <Compile Include="Busquedas\BlockDeBusquedaGenerico.cs" />
+    <Compile Include="Busquedas\BusquedaCodigo.cs" />
+    <Compile Include="Busquedas\BusquedaPorInt.cs" />
+    <Compile Include="Busquedas\BusquedaString.cs" />
+    <Compile Include="Busquedas\BusquedaStringEquals.cs" />
+    <Compile Include="Busquedas\BusquedaStringStartsWith.cs" />
+    <Compile Include="Busquedas\ContextoDeBusqueda.cs" />
+    <Compile Include="Busquedas\IBlockDeBusqueda.cs" />
+    <Compile Include="Busquedas\IContextoDeBusqueda.cs" />
+    <Compile Include="Busquedas\IParteBusqueda.cs" />
+    <Compile Include="Busquedas\ParteBusqueda.cs" />
+    <Compile Include="CreadorDTO.cs" />
+    <Compile Include="CreadorGenerico.cs" />
+    <Compile Include="FabricaNegocios.cs" />
+    <Compile Include="GrabadorDTO.cs" />
+    <Compile Include="Grabadores\GrabadorPerfil.cs" />
+    <Compile Include="GrabadorFox.cs" />
+    <Compile Include="GrabadorGenerico.cs" />
+    <Compile Include="IBorrador.cs" />
+    <Compile Include="IBorradorDTO.cs" />
+    <Compile Include="IBuscador.cs" />
+    <Compile Include="IBuscadorDTO.cs" />
+    <Compile Include="ICreadorDTO.cs" />
+    <Compile Include="ICreador.cs" />
+    <Compile Include="IGrabador.cs" />
+    <Compile Include="IGrabadorDTO.cs" />
+    <Compile Include="IGrabadorFox.cs" />
+    <Compile Include="INumerador.cs" />
+    <Compile Include="LogicaDeNegociosBase.cs" />
+    <Compile Include="Mapeador\IMapeador.cs" />
+    <Compile Include="Mapeador\IMapeadorGenerico.cs" />
+    <Compile Include="Mapeador\IMapeo.cs" />
+    <Compile Include="Mapeador\Mapeador.cs" />
+    <Compile Include="Mapeador\MapeadorGenerico.cs" />
+    <Compile Include="Mapeador\RegistroDeMapeos.cs" />
+    <Compile Include="Menu\IGestorMenu.cs" />
+    <Compile Include="Menu\IMenuGestion.cs" />
+    <Compile Include="Menu\IMenuHelper.cs" />
+    <Compile Include="Menu\IMenuLogistica.cs" />
+    <Compile Include="Menu\IMenuMayorista.cs" />
+    <Compile Include="Menu\IMenuPreventa.cs" />
+    <Compile Include="Menu\IMenuRepresentaciones.cs" />
+    <Compile Include="Menu\MenuHelper.cs" />
+    <Compile Include="Numerador.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuarios\ILogin.cs" />
+    <Compile Include="Usuarios\Login.cs" />
+    <Compile Include="Validadores\IValidador.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Inteldev.Core.DataSwitch\Inteldev.Core.DataSwitch.csproj">
+      <Project>{6395a1aa-180c-4f1a-8c4e-a85727762ce1}</Project>
+      <Name>Inteldev.Core.DataSwitch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inteldev.Core.Datos\Inteldev.Core.Datos.csproj">
+      <Project>{f52cbe45-e991-4776-991b-69df4372a333}</Project>
+      <Name>Inteldev.Core.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inteldev.Core.Modelo\Inteldev.Core.Modelo.csproj">
+      <Project>{9baf06cc-dba4-4087-94e4-42be28a777aa}</Project>
+      <Name>Inteldev.Core.Modelo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inteldev.Core.Servicios.DTO\Inteldev.Core.DTO.csproj">
+      <Project>{21a0dee8-aea7-45bc-867d-606396d5af98}</Project>
+      <Name>Inteldev.Core.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inteldev.Core\Inteldev.Core.csproj">
+      <Project>{84dbfb5d-b08d-410a-ae09-9d2f1b0b77eb}</Project>
+      <Name>Inteldev.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inteldev.Datos\Inteldev.Datos.csproj">
+      <Project>{64bd6029-6e47-4298-8708-caf99140324e}</Project>
+      <Name>Inteldev.Datos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

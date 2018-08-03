@@ -1,0 +1,24 @@
+﻿<Grid
+    x:Class="Inteldev.Core.Presentacion.Controles.Telefono"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" 
+    Height="25">
+    
+    <StackPanel Orientation="Horizontal">
+        <TextBox 
+            Name="txtCodigoArea" Width="50" 
+            Text="{Binding CodigoDeArea, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" 
+        />
+        <TextBox 
+            Name="txtPrefijo" Width="50"
+            Text="{Binding Prefijo, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" 
+        />
+        <TextBox 
+            Name="txtNumero" Width="100"
+            Text="{Binding Numero, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" 
+        />
+    </StackPanel>
+</Grid>

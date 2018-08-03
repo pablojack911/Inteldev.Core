@@ -1,0 +1,147 @@
+﻿<Grid x:Class="Inteldev.Core.Presentacion.Controles.ItemFormularioDomicilio"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"              
+             xmlns:i="clr-namespace:Inteldev.Core.Presentacion.Controles"  
+             xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
+             xmlns:controles="clr-namespace:Inteldev.Core.Presentacion.Controles"
+             mc:Ignorable="d" 
+      FocusManager.IsFocusScope="True"
+             d:Height="90" 
+      >
+    <Grid.Resources>
+        <ItemsPanelTemplate x:Key="ItemsTemplate">
+            <VirtualizingStackPanel/>
+        </ItemsPanelTemplate>
+    </Grid.Resources>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="25*"/>
+        <RowDefinition Height="25*"/>
+        <RowDefinition Height="25*"/>
+        <RowDefinition Height="25*"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="150" />
+        <ColumnDefinition Width="155" />
+        <ColumnDefinition Width="66"/>
+        <ColumnDefinition Width="119"/>
+        <ColumnDefinition Width="40"/>
+    </Grid.ColumnDefinitions>
+    <TextBlock 
+        Text="{Binding Path=Etiqueta,RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" 
+        Name="txtEtiqueta" 
+        Grid.Column="0" 
+        Grid.RowSpan="4"
+    />
+
+    <StackPanel Orientation="Horizontal" Background="Transparent" Grid.Column="1" Grid.ColumnSpan="4" Margin="0,0,0,5">
+        <Label Width="66">Calle</Label>
+        <!--<controles:ItemFormularioComboBoxConFiltro
+            Width="315"
+            x:Name="cboCalle"       
+            ItemsSource="{Binding Path=Presentador.Calles, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,RelativeSource={RelativeSource AncestorType={x:Type Grid}}}"
+            ItemsPanel="{DynamicResource ItemsTemplate}"
+            SelectedItem="{Binding Path=Presentador.Item.Calle,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,RelativeSource={RelativeSource AncestorType={x:Type Grid}}, ValidatesOnDataErrors=true, NotifyOnValidationError=true}"                                                  >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Nombre}"></TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </controles:ItemFormularioComboBoxConFiltro>-->
+
+        <ComboBox 
+            Name="cboCalle"       
+            ItemsSource="{Binding Path=Presentador.Calles, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,RelativeSource={RelativeSource AncestorType={x:Type Grid}}}"
+            SelectedItem="{Binding Path=Presentador.Item.Calle,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,RelativeSource={RelativeSource AncestorType={x:Type Grid}}, ValidatesOnDataErrors=true, NotifyOnValidationError=true}"                                                  
+            Width="315" 
+            IsTextSearchEnabled="True"
+            IsEditable="True"
+            SelectedValuePath="Nombre"
+            Tag="ItemFormularioDomicilio"
+            
+            >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Nombre}"></TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+    </StackPanel>
+
+    <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Margin="0,0,0,5">
+        <Label Width="66">Número</Label>
+        <TextBox 
+            Name="txtNumero" 
+            Text="{Binding Path=Presentador.Item.Numero, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type Grid}}, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true, NotifyOnValidationError=true}" 
+            Width="90"
+        />
+    </StackPanel>
+
+    <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Margin="0,0,0,5">
+        <Label Width="66">Piso</Label>
+        <TextBox 
+            Name="txtPiso" 
+            Text="{Binding Path=Presentador.Item.Piso, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type Grid}}, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true, NotifyOnValidationError=true}" 
+            Width="90"
+        />
+    </StackPanel>
+
+    <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="0,0,0,5">
+        <Label Width="66">Dpto</Label>
+        <TextBox
+            Name="txtDepto" 
+            Text="{Binding Path=Presentador.Item.Departamento, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type Grid}}, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true, NotifyOnValidationError=true}" Width="90"
+        />
+    </StackPanel>
+
+    <TextBlock 
+        Name="txbCoordenadas" 
+        Text="Coordenadas GPS"  
+        Grid.Column="3" 
+        Grid.Row="1" 
+        HorizontalAlignment="Center" 
+        VerticalAlignment="Center" 
+    />
+
+    <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="3">
+        <TextBlock 
+            Name="txbLatitud" 
+            Width="60" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center" 
+            Margin="6,0,0,0">Latitud
+        </TextBlock>
+        <!--Por qué un textblock en vez de un label?-->
+        <TextBox 
+            Name="txtLatitud" 
+            IsReadOnly="True"
+            Text="{Binding Path=Presentador.Item.Coordenada.Latitud, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type Grid}}, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true, NotifyOnValidationError=true}" Width="120"
+        />
+    </StackPanel>
+
+    <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="3">
+        <TextBlock 
+            Name="txbLongitud" 
+            Width="60" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center" 
+            Margin="6,0,0,0">Longitud
+        </TextBlock>
+        <TextBox 
+            Name="txtLongitud" 
+            IsReadOnly="True" 
+            Text="{Binding Path=Presentador.Item.Coordenada.Longitud, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type Grid}}, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true, NotifyOnValidationError=true}" Width="120">
+        </TextBox>
+    </StackPanel>
+
+    <Button Grid.Column="4" Grid.Row="2" Grid.RowSpan="2"  Name="btnMapa" 
+            Command="{Binding Path=PresentadorMapa.CmdVerMapa,
+                              RelativeSource={RelativeSource AncestorType={x:Type Grid}}, 
+                              UpdateSourceTrigger=PropertyChanged}"
+            CommandParameter="{Binding Path=Presentador,
+                               RelativeSource={RelativeSource AncestorType={x:Type Grid}}, 
+                               UpdateSourceTrigger=PropertyChanged, Mode=OneWay}">
+        <Image Source="/Inteldev.Core.Presentacion;component/Iconos/maps.png"></Image>
+    </Button>
+</Grid>

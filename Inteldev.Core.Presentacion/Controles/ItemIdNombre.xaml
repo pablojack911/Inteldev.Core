@@ -1,0 +1,15 @@
+﻿<Grid x:Class="Inteldev.Core.Presentacion.Controles.ItemIdNombre"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:controles="clr-namespace:Inteldev.Core.Presentacion.Controles"
+             mc:Ignorable="d" Height="63.014" Width="389.384">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="382" />
+    </Grid.ColumnDefinitions>
+    <StackPanel>
+        <controles:ItemFormulario Margin="0,0,0,5"  Etiqueta="ID" Valor="{Binding ValorID, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}"></controles:ItemFormulario>
+        <controles:ItemFormulario Etiqueta="Nombre" Valor="{Binding ValorNombre, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}"/>
+    </StackPanel>
+</Grid>

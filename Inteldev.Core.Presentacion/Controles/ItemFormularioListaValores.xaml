@@ -1,0 +1,51 @@
+﻿<Grid 
+    x:Class="Inteldev.Core.Presentacion.Controles.ItemFormularioListaValores"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d">
+    
+    <Grid.RowDefinitions>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="85"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="150"/>
+        <ColumnDefinition Width="100"/>
+        <ColumnDefinition Width="40"/>
+    </Grid.ColumnDefinitions>
+    
+    <TextBlock 
+        Name="txtEtiqueta" 
+        Text="{Binding Path=Etiqueta, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" 
+        Grid.Row="0"
+    />
+    <TextBox 
+        Name="txtValor"
+        Width="100" 
+        Text="{Binding Path=Presentador.Valor,RelativeSource={RelativeSource AncestorType={x:Type Grid}},Mode=TwoWay}" 
+        Grid.Column="1"
+    />
+    <Button 
+        Name="btnAgregar" 
+        Grid.Column="2" 
+        Command="{Binding Path=Presentador.CmdAgregar,RelativeSource={RelativeSource AncestorType={x:Type Grid}},Mode=TwoWay}" >
+        <Image Source="/Inteldev.Core.Presentacion;component/Iconos/add.png"></Image>
+    </Button> 
+    <DataGrid 
+        Name="dataGrid1" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"
+        ItemsSource="{Binding Path=Presentador.Detalle,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" 
+        SelectedItem="{Binding Path=Presentador.ItemSeleccionado,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,RelativeSource={RelativeSource AncestorType={x:Type Grid}}}"
+        CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="Valor" Binding="{Binding Valor}"/>
+        </DataGrid.Columns>
+        <DataGrid.InputBindings>
+            <KeyBinding Command="{Binding Path=Presentador.CmdBorrar,RelativeSource={RelativeSource AncestorType={x:Type Grid}}}"
+                        Key="Delete"
+                        CommandParameter="{Binding Path=Presentador.ItemSeleccionado,RelativeSource={RelativeSource AncestorType={x:Type Grid}}}">                
+            </KeyBinding>
+        </DataGrid.InputBindings>
+    </DataGrid>
+</Grid>

@@ -1,0 +1,29 @@
+﻿<Grid 
+    x:Class="Inteldev.Core.Presentacion.Controles.ItemFormularioCodigo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    Margin="0,0,0,5" 
+    FocusManager.IsFocusScope="True" FocusManager.FocusedElement="{Binding ElementName=txtCampo}">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="150" />
+        <ColumnDefinition MinWidth="100" MaxWidth="380" />
+    </Grid.ColumnDefinitions>
+    <TextBlock 
+        Name="txtEtiqueta" 
+        Text="{Binding Etiqueta, RelativeSource={RelativeSource AncestorType={x:Type Grid}}, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+        Grid.Column="0" 
+    />
+    <TextBox 
+        x:Name="txtCampo" 
+        Text="{Binding Valor, RelativeSource={RelativeSource AncestorType={x:Type Grid}}, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnDataErrors=true, NotifyOnValidationError=true}"  
+        Grid.Column="1"  
+        AutoWordSelection="True"
+        FocusManager.IsFocusScope="True"
+    />
+
+    <!--<Grid.Style>
+       
+    </Grid.Style>-->
+</Grid>
